@@ -39,7 +39,7 @@ def solve_wordle(wordle: Wordle, initial_guess: str) -> str:
     while hint != "🟩🟩🟩🟩🟩":
         for x in tlist:
             for i in range(5):
-                if hint[i] == "⬜" and initial_guess[i] in x and initial_guess.count(initial_guess[i]) == 1:
+                if hint[i] == "⬜" and initial_guess[i] in x:
                     WORDS.remove(x)
                     break
                 elif hint[i] == "🟩" and initial_guess[i] != x[i]:
