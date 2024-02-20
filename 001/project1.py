@@ -1,6 +1,5 @@
 from urllib.request import urlopen
 from random import choice
-import random
 
 WORD_LIST_URL = "https://raw.githubusercontent.com/tabatkins/wordle-list/main/words"
 
@@ -52,7 +51,7 @@ def solve_wordle(wordle: Wordle, initial_guess: str) -> str:
                     WORDS.remove(x)
                     break
         tlist = tuple(WORDS)
-        initial_guess = random.choice(WORDS)
+        initial_guess = choice(WORDS)
         hint = wordle.guess(initial_guess)
         print("guessing   " + initial_guess)
         print(hint + "   hint returned")
